@@ -1,14 +1,12 @@
 class Application
-  attr_reader :yy, :mm, :dd, :hh, :mm
   def call(env)
     resp = Rack::Response.new
 
-   time = Time.new(yy, mm, dd, hh, mm)
+   time = Time.now
     #set 'time' equal to the current time.
 
-    time = time.hh.to_s
 
-    if time  <= "12"
+    if time.hour  <  12
       resp.write "Good Morning"
     else
       resp.write "Good Afternoon"
