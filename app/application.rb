@@ -1,4 +1,5 @@
 class Application
+  attr_reader :yy, :mm, :dd, :hh, :mm
   def call(env)
     resp = Rack::Response.new
 
